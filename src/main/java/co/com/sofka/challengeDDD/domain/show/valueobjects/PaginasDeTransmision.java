@@ -5,13 +5,13 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class PaginasTransmision implements ValueObject<PaginaDeTransmisionValue> {
+public class PaginasDeTransmision implements ValueObject<PaginaDeTransmisionValue> {
 
     // se crean variables
     private final PaginaDeTransmisionValue value;
 
     // contructor
-    public PaginasTransmision(PaginaDeTransmisionValue value) {
+    public PaginasDeTransmision(PaginaDeTransmisionValue value) {
         this.value = value;
     }
 
@@ -25,8 +25,8 @@ public class PaginasTransmision implements ValueObject<PaginaDeTransmisionValue>
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PaginasTransmision)) return false;
-        PaginasTransmision that = (PaginasTransmision) o;
+        if (!(o instanceof PaginasDeTransmision)) return false;
+        PaginasDeTransmision that = (PaginasDeTransmision) o;
         return value == that.value;
     }
 
