@@ -1,6 +1,6 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.properties_values;
 
-public enum PoliticaDeRetiro {
+public enum PoliticaDeRetiroValue {
 
     TIEMPO_ESPERA_UN_MES,
     TIEMPO_ESPERA_UNA_SEMANA,

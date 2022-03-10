@@ -2,7 +2,7 @@ package co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.propertie
 
 import java.util.Date;
 
-public interface Fecha {
+public interface FechaProperties {
 
     // Método para la fecha
     Date fecha();
