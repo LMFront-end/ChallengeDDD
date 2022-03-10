@@ -3,7 +3,10 @@ package co.com.sofka.challengeDDD.domain.show.entities;
 import co.com.sofka.challengeDDD.domain.show.ids.CanalDeTransmisionId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDePago;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.PaginasDeTransmision;
+import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.domain.generic.Entity;
+
+import java.util.Objects;
 
 public class CanalDeTransmision extends Entity<CanalDeTransmisionId> {
 
@@ -20,4 +23,17 @@ public class CanalDeTransmision extends Entity<CanalDeTransmisionId> {
         this.acuerdoDePago = acuerdoDePago;
         this.paginasDeTransmision = paginasDeTransmision;
     }
+
+    // métodos de la entidad CanalDeTransmisión
+
+    // cambiarPaginaTransmision()
+    public void paginasDeTransmision(PaginasDeTransmision paginasDeTransmision){
+        this.paginasDeTransmision = Objects.requireNonNull(paginasDeTransmision);
+    }
+
+    // cambiarAcuerdoDePago()
+    public void cambiarAcuerdoDePago(AcuerdoDePago acuerdoDePago){
+        this.acuerdoDePago = Objects.requireNonNull(acuerdoDePago);
+    }
+
 }
