@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 public class CanalDeTransmisionId extends Identity {
 
     // contructores
-    private CanalDeTransmisionId(String uuid) {
+    public CanalDeTransmisionId(String uuid) {
         super(uuid);
     }
 
