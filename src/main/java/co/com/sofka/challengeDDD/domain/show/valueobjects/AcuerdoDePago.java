@@ -27,7 +27,7 @@ public class AcuerdoDePago implements ValueObject<AcuerdoDePagoProperties> {
     }
 
     // se implementa el equal y hashCode
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
