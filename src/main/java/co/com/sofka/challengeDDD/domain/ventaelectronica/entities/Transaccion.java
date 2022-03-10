@@ -1,9 +1,12 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica.entities;
 
+import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoHabitacion;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.TransaccionId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.Fecha;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.ValorMoneda;
 import co.com.sofka.domain.generic.Entity;
+
+import java.util.Objects;
 
 public class Transaccion extends Entity <TransaccionId> {
 
@@ -21,5 +24,15 @@ public class Transaccion extends Entity <TransaccionId> {
     }
 
     // métodos de la entidad Transacción
+
+    // cambiarFecha()
+    public void cambiarFecha(Fecha fecha) {
+        this.fecha = Objects.requireNonNull(fecha);
+    }
+
+    // cambiarValorMoneda()
+    public void cambiarValorMoneda(ValorMoneda valorMoneda) {
+        this.valorMoneda = Objects.requireNonNull(valorMoneda);
+    }
 
 }
