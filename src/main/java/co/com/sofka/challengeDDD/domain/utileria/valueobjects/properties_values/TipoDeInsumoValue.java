@@ -1,6 +1,6 @@
 package co.com.sofka.challengeDDD.domain.utileria.valueobjects.properties_values;
 
-public enum TipoDeInsumo {
+public enum TipoDeInsumoValue {
     TECLADO,
     MOUSE,
     PANTALLA,
