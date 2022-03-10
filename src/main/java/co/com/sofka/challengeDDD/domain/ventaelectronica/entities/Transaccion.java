@@ -1,6 +1,5 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica.entities;
 
-import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoHabitacion;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.TransaccionId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.Fecha;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.ValorMoneda;
