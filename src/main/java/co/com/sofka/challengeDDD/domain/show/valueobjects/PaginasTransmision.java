@@ -21,7 +21,7 @@ public class PaginasTransmision implements ValueObject<PaginaDeTransmisionValue>
     }
 
     // se implementa el equal y hashCode
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
