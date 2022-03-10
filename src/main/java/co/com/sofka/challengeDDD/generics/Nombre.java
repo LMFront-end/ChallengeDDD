@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Nombre implements ValueObject<NombreProperties> {
 
-    // declaracion de variable
+    // declaración de variable
     private final String nombre;
     private final String apellido;
 

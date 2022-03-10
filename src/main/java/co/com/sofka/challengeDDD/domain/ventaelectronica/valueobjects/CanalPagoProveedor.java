@@ -20,7 +20,7 @@ public class CanalPagoProveedor implements ValueObject <CanalPagoProveedorValue>
     }
 
     // se implementa el equal y hashCode
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
