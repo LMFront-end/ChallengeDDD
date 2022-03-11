@@ -1,5 +1,6 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica;
 import co.com.sofka.challengeDDD.domain.utileria.events.*;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.CanalDePago;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Cliente;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Transaccion;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.events.*;
@@ -50,11 +51,17 @@ public class VentaElectronicaChange extends EventChange {
 
         // crearCanalDePago()
         apply((CanalDePagoCreado event) ->{
+            ventaElectronica.canalDePago = new CanalDePago(
+                    event.getCanalDePagoId(),
+                    event.getCanalPagoProveedor(),
+                    event.getPoliticaDeRetiro()
+            );
         });
 
         // modificarCanalDePago()
-
         apply((CanalDePagoModificado event) ->{
+            ventaElectronica.canalDePago.cambiarCanalPagoProveedor(event.getCanalPagoProveedor());
+            ventaElectronica.canalDePago.cambiarPoliticaDeRetiro(event.getPoliticaDeRetiro());
         });
     }
 
