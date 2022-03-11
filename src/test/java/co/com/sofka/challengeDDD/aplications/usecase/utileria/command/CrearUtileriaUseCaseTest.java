@@ -21,7 +21,7 @@ class CrearUtileriaUseCaseTest {
         ShowId showId = ShowId.of("1234");
         UtileriaID utileriaID = UtileriaID.of("78965");
 
-        // se pasa la referencia de id
+        // se pasa la referencia de id show
         var command = new CrearUtileria(utileriaID, showId);
         var useCase = new CrearUtileriaUseCase();
 
