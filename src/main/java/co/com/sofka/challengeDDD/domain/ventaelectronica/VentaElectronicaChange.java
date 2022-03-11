@@ -1,4 +1,10 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica;
 
-public class VentaElectronicaChange {
+import co.com.sofka.domain.generic.EventChange;
+
+public class VentaElectronicaChange extends EventChange {
+
+    public VentaElectronicaChange(VentaElectronica ventaElectronica){
+    }
+
 }
