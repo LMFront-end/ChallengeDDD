@@ -3,11 +3,16 @@ package co.com.sofka.challengeDDD.domain.show;
 import co.com.sofka.challengeDDD.domain.show.entities.CanalDeTransmision;
 import co.com.sofka.challengeDDD.domain.show.entities.Modelo;
 import co.com.sofka.challengeDDD.domain.show.entities.Monitor;
+import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
 import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
+import co.com.sofka.challengeDDD.generics.Email;
+import co.com.sofka.challengeDDD.generics.Identificacion;
+import co.com.sofka.challengeDDD.generics.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Show extends AggregateEvent<ShowId> {
 
@@ -44,4 +49,25 @@ public class Show extends AggregateEvent<ShowId> {
 
         return show;
     }
+
+    // métodos del agregado
+
+    // asignarModelo()
+    public void asignarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email){
+        Objects.requireNonNull(modeloId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(email);
+
+    }
+
+    // cambiarModelo()
+
+    // asignarMonitor()
+
+    // cambiarMonitor()
+
+    // asignarCanalDeTransmision()
+
+    // cambiarCanalDeTransmision()
 }
