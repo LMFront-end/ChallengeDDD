@@ -8,10 +8,17 @@ import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.CanalDePago;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Cliente;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Transaccion;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.CanalDePagoId;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.ClienteId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.TransaccionId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.VentaElectronicaId;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.CanalPagoProveedor;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.Fecha;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.PoliticaDeRetiro;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.ValorMoneda;
+import co.com.sofka.challengeDDD.generics.Email;
+import co.com.sofka.challengeDDD.generics.Identificacion;
+import co.com.sofka.challengeDDD.generics.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -69,27 +76,47 @@ public class VentaElectronica extends AggregateEvent<VentaElectronicaId> {
     }
 
     // modificarTransaccion()
-    public void modificarTransaccion(){
-
+    public void modificarTransaccion(TransaccionId entityId, ValorMoneda valorMoneda, Fecha fecha){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(valorMoneda);
+        Objects.requireNonNull(fecha);
+        appendChange(new TransaccionModificada(entityId, valorMoneda, fecha)).apply();
     }
 
     // crearCliente()
-    public void crearCliente(){
+    public void crearCliente(ClienteId entityId, Nombre nombre, Identificacion identificacion, Email email){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(email);
+        appendChange(new ClienteCreado(entityId, nombre, identificacion, email)).apply();
 
     }
 
     // modificarCliente()
-    public void modificarCliente(){
+    public void modificarCliente(ClienteId entityId, Nombre nombre, Identificacion identificacion, Email email){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(email);
+        appendChange(new ClienteModficado(entityId, nombre, identificacion, email)).apply();
 
     }
 
     // crearCanalDePago()
-    public void crearCanalDePago(){
-
+    public void crearCanalDePago(CanalDePagoId entityId, CanalPagoProveedor canalPagoProveedor, PoliticaDeRetiro politicaDeRetiro){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(canalPagoProveedor);
+        Objects.requireNonNull(politicaDeRetiro);
+        appendChange(new CanalDePagoCreado(entityId, canalPagoProveedor, politicaDeRetiro)).apply();
     }
 
     // modificarCanalDePago()
-    public void modificarCanalDePago(){
-
+    public void modificarCanalDePago(CanalDePagoId entityId, CanalPagoProveedor canalPagoProveedor, PoliticaDeRetiro politicaDeRetiro){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(canalPagoProveedor);
+        Objects.requireNonNull(politicaDeRetiro);
+        appendChange(new CanalDePagoModificado(entityId, canalPagoProveedor, politicaDeRetiro)).apply();
+    }
     }
 }
