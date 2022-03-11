@@ -75,7 +75,7 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     }
 
     // añadirInsumoElectronico()
-    public void aniadirInsumoElectronico(InsumoID entityId, TipoDeInsumo tipoDeInsumo, EstadoInsumo estadoInsumo){
+    public void aniadirInsumoElectronico(ShowId showId, InsumoID entityId, InsumoID insumoID, TipoDeInsumo tipoDeInsumo, EstadoInsumo estadoInsumo){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(tipoDeInsumo);
         Objects.requireNonNull(estadoInsumo);

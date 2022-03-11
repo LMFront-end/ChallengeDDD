@@ -1,5 +1,6 @@
 package co.com.sofka.challengeDDD.domain.utileria.commands;
 
+import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.domain.utileria.ids.EspacioID;
 import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.EstadoHabitacion;
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CambiarEspacio extends Command {
 
+    private final ShowId showId;
     private final UtileriaID utileriaID;
     private final EspacioID espacioId;
     private final TipoHabitacion tipoHabitacion;
