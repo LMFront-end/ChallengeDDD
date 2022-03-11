@@ -4,11 +4,8 @@ import co.com.sofka.business.generic.BusinessException;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.business.support.TriggeredEvent;
-import co.com.sofka.challengeDDD.aplications.usecase.ventaelectronica.event.logs.GenerarClienteLog;
 import co.com.sofka.challengeDDD.aplications.usecase.ventaelectronica.event.logs.GenerarTransaccionLog;
-import co.com.sofka.challengeDDD.domain.ventaelectronica.events.ClienteCreado;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.events.TransaccionCreada;
-import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.ClienteId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.TransaccionId;
 
 import java.util.List;

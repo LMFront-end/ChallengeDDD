@@ -16,7 +16,7 @@ public class ProductoAniadido extends DomainEvent {
     private final TipoProductoDisfraz tipoProductoDisfraz;
     private final EstadoProducto estadoProducto;
 
-    public ProductoAniadido(ProductoID productoID, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto) {
+    public ProductoAniadido(ProductoID productoID, TipoProductoJuguete tipoProductoJuguete, TipoProductoDisfraz tipoProductoDisfraz, EstadoProducto estadoProducto) {
         super("co.com.sofka.challengeDDD.ProductoAniadido");
         this.productoID = productoID;
         this.tipoProductoJuguete = tipoProductoJuguete;

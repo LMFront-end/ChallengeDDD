@@ -5,11 +5,8 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.business.support.TriggeredEvent;
 import co.com.sofka.challengeDDD.aplications.usecase.utileria.event.logs.GenerarProductoLog;
-import co.com.sofka.challengeDDD.aplications.usecase.utileria.event.logs.GenerarUtileriaLog;
 import co.com.sofka.challengeDDD.domain.utileria.events.ProductoAniadido;
-import co.com.sofka.challengeDDD.domain.utileria.events.UtileriaCreada;
 import co.com.sofka.challengeDDD.domain.utileria.ids.ProductoID;
-import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 
 import java.util.List;
 

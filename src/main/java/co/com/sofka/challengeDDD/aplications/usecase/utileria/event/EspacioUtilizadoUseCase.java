@@ -4,10 +4,7 @@ import co.com.sofka.business.generic.BusinessException;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.business.support.TriggeredEvent;
-import co.com.sofka.challengeDDD.aplications.usecase.show.event.logs.GenerarModeloLog;
 import co.com.sofka.challengeDDD.aplications.usecase.utileria.event.logs.GenerarEspacioLog;
-import co.com.sofka.challengeDDD.domain.show.events.ModeloAsignada;
-import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
 import co.com.sofka.challengeDDD.domain.utileria.events.EspacioUtilizado;
 import co.com.sofka.challengeDDD.domain.utileria.ids.EspacioID;
 
