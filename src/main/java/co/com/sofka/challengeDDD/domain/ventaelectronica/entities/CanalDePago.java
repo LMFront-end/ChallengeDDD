@@ -5,6 +5,7 @@ import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.CanalPagoP
 import co.com.sofka.challengeDDD.domain.ventaelectronica.valueobjects.PoliticaDeRetiro;
 import co.com.sofka.domain.generic.Entity;
 
+
 import java.util.Objects;
 
 public class CanalDePago extends Entity<CanalDePagoId> {
