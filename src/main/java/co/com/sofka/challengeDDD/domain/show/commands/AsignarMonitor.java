@@ -10,15 +10,15 @@ import lombok.Getter;
 public class AsignarMonitor extends Command{
 
     private final MonitorId monitorId;
-        private final Nombre nombre;
-        private final Identificacion identificacion;
-        private final AcuerdoDeConfidencialidad acuerdoDeConfidencialidad;
+    private final Nombre nombre;
+    private final Identificacion identificacion;
+    private final AcuerdoDeConfidencialidad acuerdoDeConfidencialidad;
 
-        public AsignarMonitor(MonitorId monitorId, Nombre nombre, Identificacion identificacion, AcuerdoDeConfidencialidad acuerdoDeConfidencialidad) {
-            this.monitorId = monitorId;
-            this.nombre = nombre;
-            this.identificacion = identificacion;
-            this.acuerdoDeConfidencialidad = acuerdoDeConfidencialidad;
-        }
+    public AsignarMonitor(MonitorId monitorId, Nombre nombre, Identificacion identificacion, AcuerdoDeConfidencialidad acuerdoDeConfidencialidad) {
+        this.monitorId = monitorId;
+        this.nombre = nombre;
+        this.identificacion = identificacion;
+        this.acuerdoDeConfidencialidad = acuerdoDeConfidencialidad;
+    }
 
 }

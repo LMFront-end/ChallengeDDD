@@ -10,15 +10,15 @@ import lombok.Getter;
 public class AsignarModelo extends Command{
 
     private final ModeloId modeloId;
-        private final Nombre nombre;
-        private final Identificacion identificacion;
-        private final Email email;
+    private final Nombre nombre;
+    private final Identificacion identificacion;
+    private final Email email;
 
-        public AsignarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email) {
-            this.modeloId = modeloId;
-            this.nombre = nombre;
-            this.identificacion = identificacion;
-            this.email = email;
-        }
+    public AsignarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email) {
+        this.modeloId = modeloId;
+        this.nombre = nombre;
+        this.identificacion = identificacion;
+        this.email = email;
+    }
 
 }

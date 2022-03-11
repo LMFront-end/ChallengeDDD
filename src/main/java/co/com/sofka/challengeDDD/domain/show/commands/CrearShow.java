@@ -9,9 +9,9 @@ public class CrearShow extends Command{
 
     private final ShowId showId;
 
-        // se implementa constructor
-        public CrearShow(ShowId showId) {
-            this.showId = showId;
-        }
+    // se implementa constructor
+    public CrearShow(ShowId showId) {
+        this.showId = showId;
+    }
 
 }
