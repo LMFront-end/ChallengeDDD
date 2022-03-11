@@ -8,6 +8,7 @@ import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.CanalDePago;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Cliente;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Transaccion;
+import co.com.sofka.challengeDDD.domain.ventaelectronica.events.*;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.CanalDePagoId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.ClienteId;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.ids.TransaccionId;
@@ -66,7 +67,6 @@ public class VentaElectronica extends AggregateEvent<VentaElectronicaId> {
 
     // métodos del agregado [AR] VentaElectronica
 
-
     // crearTransaccion()
     public void crearTransaccion(TransaccionId entityId, ValorMoneda valorMoneda, Fecha fecha){
         Objects.requireNonNull(entityId);
@@ -118,5 +118,6 @@ public class VentaElectronica extends AggregateEvent<VentaElectronicaId> {
         Objects.requireNonNull(politicaDeRetiro);
         appendChange(new CanalDePagoModificado(entityId, canalPagoProveedor, politicaDeRetiro)).apply();
     }
-    }
+
 }
+
