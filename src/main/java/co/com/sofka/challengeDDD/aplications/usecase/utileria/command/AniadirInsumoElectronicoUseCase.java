@@ -16,8 +16,8 @@ public class AniadirInsumoElectronicoUseCase extends UseCase<RequestCommand<Ania
         // se recoge la instancia
         // se debe pasar la referencia de showId
         var utileria = Utileria.from(command.getUtileriaID(), command.getShowId(), retrieveEvents());
-        utileria.aniadirInsumoElectronico(command.getInsumoID(), command.getInsumoID(), command.getTipoDeInsumo(), command.getEstadoInsumo());
+        utileria.aniadirInsumoElectronico(command.getInsumoID(), command.getTipoDeInsumo(), command.getEstadoInsumo());
         emit().onResponse(new ResponseEvents(utileria.getUncommittedChanges()));
     }
-    
+
 }

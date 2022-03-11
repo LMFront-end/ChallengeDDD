@@ -16,7 +16,7 @@ public class AniadirProductoUseCase extends UseCase<RequestCommand<AniadirProduc
         // se recoge la instancia
         // se debe pasar la referencia de showId
         var utileria = Utileria.from(command.getUtileriaID(), command.getShowId(), retrieveEvents());
-        utileria.aniadirProducto(command.getProductoID(), command.getUtileriaID(), command.getTipoProductoDisfraz(), command.getTipoProductoJuguete(), command.getEstadoProducto());
+        utileria.aniadirProducto(command.getProductoID(),command.getTipoProductoDisfraz(), command.getTipoProductoJuguete(), command.getEstadoProducto());
         emit().onResponse(new ResponseEvents(utileria.getUncommittedChanges()));
     }
 

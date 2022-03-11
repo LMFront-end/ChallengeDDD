@@ -1,7 +1,6 @@
 package co.com.sofka.challengeDDD.domain.utileria.events;
 
 import co.com.sofka.challengeDDD.domain.utileria.ids.ProductoID;
-import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.EstadoProducto;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoDisfraz;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoJuguete;
@@ -17,7 +16,7 @@ public class ProductoAniadido extends DomainEvent {
     private final TipoProductoDisfraz tipoProductoDisfraz;
     private final EstadoProducto estadoProducto;
 
-    public ProductoAniadido(UtileriaID productoID, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto) {
+    public ProductoAniadido(ProductoID productoID, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto) {
         super("co.com.sofka.challengeDDD.ProductoAniadido");
         this.productoID = productoID;
         this.tipoProductoJuguete = tipoProductoJuguete;

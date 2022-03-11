@@ -60,9 +60,8 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     // métodos del agregado [AR]Utileria
 
     // añadirProducto()
-    public void aniadirProducto(ProductoID utileriaID, UtileriaID productoId, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto){
+    public void aniadirProducto(ProductoID productoId, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto){
         Objects.requireNonNull(productoId);
-        Objects.requireNonNull(utileriaID);
         Objects.requireNonNull(tipoProductoJuguete);
         Objects.requireNonNull(tipoProductoDisfraz);
         Objects.requireNonNull(estadoProducto);
@@ -76,7 +75,7 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     }
 
     // añadirInsumoElectronico()
-    public void aniadirInsumoElectronico(InsumoID entityId, InsumoID insumoID, TipoDeInsumo tipoDeInsumo, EstadoInsumo estadoInsumo){
+    public void aniadirInsumoElectronico(InsumoID entityId,TipoDeInsumo tipoDeInsumo, EstadoInsumo estadoInsumo){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(tipoDeInsumo);
         Objects.requireNonNull(estadoInsumo);
@@ -98,8 +97,7 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     }
 
     // cambiarEspacio()
-    public void cambiarEspacio(EspacioID entityId, UtileriaID utileriaID, TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
-        Objects.requireNonNull(utileriaID);
+    public void cambiarEspacio(EspacioID entityId,TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(tipoHabitacion);
         Objects.requireNonNull(estadoHabitacion);
