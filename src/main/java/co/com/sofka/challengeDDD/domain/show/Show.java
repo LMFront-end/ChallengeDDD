@@ -4,7 +4,9 @@ import co.com.sofka.challengeDDD.domain.show.entities.CanalDeTransmision;
 import co.com.sofka.challengeDDD.domain.show.entities.Modelo;
 import co.com.sofka.challengeDDD.domain.show.entities.Monitor;
 import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
+import co.com.sofka.challengeDDD.domain.show.ids.MonitorId;
 import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
+import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDeConfidencialidad;
 import co.com.sofka.challengeDDD.generics.Email;
 import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
@@ -58,12 +60,26 @@ public class Show extends AggregateEvent<ShowId> {
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(identificacion);
         Objects.requireNonNull(email);
-
+        appendChange(new ModeloAsignada(modeloId, nombre, identificacion, email)).apply();
     }
 
     // cambiarModelo()
+    public void cambiarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email){
+        Objects.requireNonNull(modeloId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(email);
+        appendChange(new ModeloCambiada(modeloId, nombre, identificacion, email)).apply();
+    }
 
     // asignarMonitor()
+    public void asignarMonitor(MonitorId monitorId, Nombre nombre, Identificacion identificacion, AcuerdoDeConfidencialidad acuerdoDeConfidencialidad){
+        Objects.requireNonNull(monitorId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(acuerdoDeConfidencialidad);
+        appendChange(new MonitorAsignado(monitorId, nombre, identificacion, acuerdoDeConfidencialidad)).apply();
+    }
 
     // cambiarMonitor()
 
