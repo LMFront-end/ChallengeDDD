@@ -3,6 +3,9 @@ package co.com.sofka.challengeDDD.domain.show;
 import co.com.sofka.challengeDDD.domain.show.entities.CanalDeTransmision;
 import co.com.sofka.challengeDDD.domain.show.entities.Modelo;
 import co.com.sofka.challengeDDD.domain.show.entities.Monitor;
+import co.com.sofka.challengeDDD.domain.show.events.ModeloAsignada;
+import co.com.sofka.challengeDDD.domain.show.events.MonitorAsignado;
+import co.com.sofka.challengeDDD.domain.show.events.MonitorCambiado;
 import co.com.sofka.challengeDDD.domain.show.ids.CanalDeTransmisionId;
 import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
 import co.com.sofka.challengeDDD.domain.show.ids.MonitorId;
@@ -49,6 +52,7 @@ public class Show extends AggregateEvent<ShowId> {
 
         var show = new Show(showId);
         // Evento de dominio, aplica el evento de dominio sobre el show
+
         //events.forEach(event -> show.applyEvent(event))
         events.forEach(show::applyEvent);
 
