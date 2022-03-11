@@ -60,8 +60,10 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     // métodos del agregado [AR]Utileria
 
     // añadirProducto()
-    public void aniadirProducto(ProductoID productoId, TipoProductoJuguete tipoProductoJuguete, TipoProductoDisfraz tipoProductoDisfraz, EstadoProducto estadoProducto){
+    public void aniadirProducto(ShowId showId, ProductoID utileriaID, UtileriaID productoId, TipoProductoDisfraz tipoProductoJuguete, TipoProductoJuguete tipoProductoDisfraz, EstadoProducto estadoProducto){
         Objects.requireNonNull(productoId);
+        Objects.requireNonNull(showId);
+        Objects.requireNonNull(utileriaID);
         Objects.requireNonNull(tipoProductoJuguete);
         Objects.requireNonNull(tipoProductoDisfraz);
         Objects.requireNonNull(estadoProducto);
