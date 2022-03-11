@@ -27,7 +27,7 @@ public class Show extends AggregateEvent<ShowId> {
     * comando --> presente
     * */
 
-    // se llaman a las entidades de Show
+    // se llama a las entidades de Show
     // modificador de acceso
     protected ShowId showId;
     protected Modelo modelo;
@@ -38,7 +38,7 @@ public class Show extends AggregateEvent<ShowId> {
     // se crea el constructor
     public Show(ShowId entityId) {
         super(entityId);
-        // se llaman los comportamientos del agregado
+        // se llama los comportamientos del agregado
         appendChange(new ShowCreado(entityId)).apply();
 
         subscribe(new ShowChange(this));
@@ -49,15 +49,15 @@ public class Show extends AggregateEvent<ShowId> {
     public static Show from(ShowId showId, List<DomainEvent> events){
 
         var show = new Show(showId);
-        // Evento de dominio, aplica el evento de dominio sobre el show
 
+        // Evento de dominio, aplica el evento de dominio sobre el show
         //events.forEach(event -> show.applyEvent(event))
         events.forEach(show::applyEvent);
 
         return show;
     }
 
-    // métodos del agregado
+    // métodos del agregado [AR] Show
 
     // asignarModelo()
     public void asignarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email){

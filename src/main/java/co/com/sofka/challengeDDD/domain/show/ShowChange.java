@@ -65,5 +65,5 @@ public class ShowChange extends EventChange {
             show.canalDeTransmision.cambiarAcuerdoDePago(event.getAcuerdoDePago());
         });
     }
-    
+
 }
