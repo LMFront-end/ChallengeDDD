@@ -18,50 +18,40 @@ public class UtileriaChange extends EventChange {
         // Métodos
 
         //  añadirProducto()
-        apply((ProductoAniadido event) -> {
-            utileria.productos.add(new Producto(
-                    event.getProductoID(),
-                    event.getTipoProductoJuguete(),
-                    event.getTipoProductoDisfraz(),
-                    event.getEstadoProducto()
-            ));
-        });
+        apply((ProductoAniadido event) -> utileria.productos.add(new Producto(
+                event.getProductoID(),
+                event.getTipoProductoJuguete(),
+                event.getTipoProductoDisfraz(),
+                event.getEstadoProducto()
+        )));
 
         //  eliminarProducto()
-        apply((ProductoEliminado event) ->{
-            utileria.productos.forEach(producto -> {
-                if (producto.identity().equals(event.getProductoID())) {
-                    utileria.productos.remove(producto);
-                }
-            });
-        });
+        apply((ProductoEliminado event) -> utileria.productos.forEach(producto -> {
+            if (producto.identity().equals(event.getProductoID())) {
+                utileria.productos.remove(producto);
+            }
+        }));
 
         //  añadirInsumoElectronico()
-        apply((InsumoElectronicoAniadido event) ->{
-            utileria.insumosElectronicos.add(new InsumoElectronico(
-                    event.getInsumoID(),
-                    event.getTipoDeInsumo(),
-                    event.getEstadoInsumo()
-            ));
-        });
+        apply((InsumoElectronicoAniadido event) -> utileria.insumosElectronicos.add(new InsumoElectronico(
+                event.getInsumoID(),
+                event.getTipoDeInsumo(),
+                event.getEstadoInsumo()
+        )));
 
         //  eliminarInsumoElectronico()
-        apply((InsumoElectronicoEliminado event) -> {
-            utileria.insumosElectronicos.forEach(insumo -> {
-                if (insumo.identity().equals(event.getInsumoID())) {
-                    utileria.insumosElectronicos.remove(insumo);
-                }
-            });
-        });
+        apply((InsumoElectronicoEliminado event) -> utileria.insumosElectronicos.forEach(insumo -> {
+            if (insumo.identity().equals(event.getInsumoID())) {
+                utileria.insumosElectronicos.remove(insumo);
+            }
+        }));
 
         // utilizarEspacio()
-        apply((EspacioUtilizado event) ->{
-            utileria.espacio = new Espacio(
-                    event.getEntityId(),
-                    event.getTipoHabitacion(),
-                    event.getEstadoHabitacion()
-            );
-        });
+        apply((EspacioUtilizado event) -> utileria.espacio = new Espacio(
+                event.getEntityId(),
+                event.getTipoHabitacion(),
+                event.getEstadoHabitacion()
+        ));
 
         // cambiarEspacio()
         apply((EspacioCambiado event) -> {
