@@ -1,6 +1,7 @@
 package co.com.sofka.challengeDDD.domain.utileria.commands;
 
 import co.com.sofka.challengeDDD.domain.utileria.ids.ProductoID;
+import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.EstadoProducto;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoDisfraz;
 import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoJuguete;
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AniadirProducto extends Command {
 
+    private final UtileriaID utileriaID;
     private final ProductoID productoID;
     private final TipoProductoJuguete tipoProductoJuguete;
     private final TipoProductoDisfraz tipoProductoDisfraz;
