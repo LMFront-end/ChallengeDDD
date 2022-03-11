@@ -99,7 +99,9 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     }
 
     // cambiarEspacio()
-    public void cambiarEspacio(EspacioID entityId, TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
+    public void cambiarEspacio(ShowId showId, EspacioID entityId, UtileriaID utileriaID, TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
+        Objects.requireNonNull(showId);
+        Objects.requireNonNull(utileriaID);
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(tipoHabitacion);
         Objects.requireNonNull(estadoHabitacion);
