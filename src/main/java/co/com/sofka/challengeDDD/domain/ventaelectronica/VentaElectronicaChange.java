@@ -1,5 +1,4 @@
 package co.com.sofka.challengeDDD.domain.ventaelectronica;
-import co.com.sofka.challengeDDD.domain.utileria.events.*;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.CanalDePago;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Cliente;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Transaccion;
@@ -18,13 +17,11 @@ public class VentaElectronicaChange extends EventChange {
         // Métodos
 
         // crearTransaccion()
-        apply((TransaccionCreada event) ->{
-            ventaElectronica.transaccion = new Transaccion(
-              event.getTransaccionId(),
-              event.getValorMoneda(),
-              event.getFecha()
-            );
-        });
+        apply((TransaccionCreada event) -> ventaElectronica.transaccion = new Transaccion(
+          event.getTransaccionId(),
+          event.getValorMoneda(),
+          event.getFecha()
+        ));
 
         // modificarTransaccion()
         apply((TransaccionModificada event) ->{
@@ -33,14 +30,12 @@ public class VentaElectronicaChange extends EventChange {
         });
 
         // crearCliente()
-        apply((ClienteCreado event) ->{
-            ventaElectronica.cliente = new Cliente(
-                    event.getClienteId(),
-                    event.getNombre(),
-                    event.getIdentificacion(),
-                    event.getEmail()
-            );
-        });
+        apply((ClienteCreado event) -> ventaElectronica.cliente = new Cliente(
+                event.getClienteId(),
+                event.getNombre(),
+                event.getIdentificacion(),
+                event.getEmail()
+        ));
 
         // modificarCliente()
         apply((ClienteModificado event) ->{
@@ -50,13 +45,11 @@ public class VentaElectronicaChange extends EventChange {
         });
 
         // crearCanalDePago()
-        apply((CanalDePagoCreado event) ->{
-            ventaElectronica.canalDePago = new CanalDePago(
-                    event.getCanalDePagoId(),
-                    event.getCanalPagoProveedor(),
-                    event.getPoliticaDeRetiro()
-            );
-        });
+        apply((CanalDePagoCreado event) -> ventaElectronica.canalDePago = new CanalDePago(
+                event.getCanalDePagoId(),
+                event.getCanalPagoProveedor(),
+                event.getPoliticaDeRetiro()
+        ));
 
         // modificarCanalDePago()
         apply((CanalDePagoModificado event) ->{
