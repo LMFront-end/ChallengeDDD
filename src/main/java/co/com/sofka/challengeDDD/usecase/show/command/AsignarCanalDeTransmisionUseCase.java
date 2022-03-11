@@ -5,7 +5,6 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.challengeDDD.domain.show.Show;
 import co.com.sofka.challengeDDD.domain.show.commands.AsignarCanalDeTransmision;
-import co.com.sofka.domain.generic.Command;
 
 public class AsignarCanalDeTransmisionUseCase extends UseCase<RequestCommand<AsignarCanalDeTransmision>, ResponseEvents> {
 
