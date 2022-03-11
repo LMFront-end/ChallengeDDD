@@ -2,8 +2,8 @@ package co.com.sofka.challengeDDD.domain.show.events;
 
 import co.com.sofka.challengeDDD.domain.show.ids.MonitorId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDeConfidencialidad;
-import co.com.sofka.challengeDDD.generics.Identificacion;
-import co.com.sofka.challengeDDD.generics.Nombre;
+import co.com.sofka.challengeDDD.domain.generics.Identificacion;
+import co.com.sofka.challengeDDD.domain.generics.Nombre;
 import co.com.sofka.domain.generic.DomainEvent;
 import lombok.Getter;
 

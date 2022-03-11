@@ -1,4 +1,4 @@
-package co.com.sofka.challengeDDD.generics.properties_values;
+package co.com.sofka.challengeDDD.domain.generics.properties_values;
 
 public interface NombreProperties {
 

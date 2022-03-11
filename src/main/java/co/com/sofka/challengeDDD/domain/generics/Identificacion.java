@@ -1,6 +1,6 @@
-package co.com.sofka.challengeDDD.generics;
+package co.com.sofka.challengeDDD.domain.generics;
 
-import co.com.sofka.challengeDDD.generics.properties_values.IdentificacionProperties;
+import co.com.sofka.challengeDDD.domain.generics.properties_values.IdentificacionProperties;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;

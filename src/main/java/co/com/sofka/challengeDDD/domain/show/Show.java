@@ -11,9 +11,9 @@ import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDeConfidencialidad;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDePago;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.PaginasDeTransmision;
-import co.com.sofka.challengeDDD.generics.Email;
-import co.com.sofka.challengeDDD.generics.Identificacion;
-import co.com.sofka.challengeDDD.generics.Nombre;
+import co.com.sofka.challengeDDD.domain.generics.Email;
+import co.com.sofka.challengeDDD.domain.generics.Identificacion;
+import co.com.sofka.challengeDDD.domain.generics.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
