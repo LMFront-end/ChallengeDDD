@@ -16,7 +16,9 @@ public class ModificarCanalDePagoUseCase extends UseCase<RequestCommand<Modifica
         var command =  input.getCommand();
         // se recoge la instancia
         var ventaElectronica = VentaElectronica.from(command.getVentaElectronicaId(), command.getShowId(), retrieveEvents());
+
         ventaElectronica.modificarCanalDePago(command.getCanalDePagoId(), command.getCanalPagoProveedor(), command.getPoliticaDeRetiro());
+
         emit().onResponse(new ResponseEvents(ventaElectronica.getUncommittedChanges()));
 
     }
