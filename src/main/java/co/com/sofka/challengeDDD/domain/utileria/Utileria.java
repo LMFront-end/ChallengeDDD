@@ -68,6 +68,10 @@ public class Utileria extends AggregateEvent<UtileriaID> {
     }
 
     // eliminarProducto()
+    public void eliminarProducto(ProductoID productoId){
+        Objects.requireNonNull(productoId);
+        appendChange(new ProductoEliminado(productoId)).apply();
+    }
 
     // añadirInsumoElectronico()
 
