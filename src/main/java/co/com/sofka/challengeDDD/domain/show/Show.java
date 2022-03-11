@@ -39,7 +39,7 @@ public class Show extends AggregateEvent<ShowId> {
     public Show(ShowId entityId) {
         super(entityId);
         // se llaman los comportamientos del agregado
-        appendChange(new showCreado(entityId)).apply();
+        appendChange(new ShowCreado(entityId)).apply();
 
         subscribe(new ShowChange(this));
     }
