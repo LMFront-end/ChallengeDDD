@@ -15,8 +15,9 @@ public class AsignarCanalDeTransmisionUseCase extends UseCase<RequestCommand<Asi
 
         var command =  input.getCommand();
         // se recoge la instancia
-        var show = Show.from(command.getShowId());
-
+        var show = Show.from(command.getShowId(), retrieveEvents());
+        show.asignarCanalDeTransmision(command.getCanalDeTransmisionId(), command.getAcuerdoDePago(), command.getPaginasDeTransmision());
+        emit().onResponse(new ResponseEvents(show.getUncommittedChanges()));
     }
 
 

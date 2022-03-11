@@ -1,4 +1,5 @@
 package co.com.sofka.challengeDDD.domain.show.commands;
+import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.challengeDDD.domain.show.ids.CanalDeTransmisionId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDePago;
@@ -11,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CambiarCanalDeTransmision extends Command{
 
+    private final ShowId showId;
     private final CanalDeTransmisionId canalDeTransmisionId;
     private final AcuerdoDePago acuerdoDePago;
     private final PaginasDeTransmision paginasDeTransmision;

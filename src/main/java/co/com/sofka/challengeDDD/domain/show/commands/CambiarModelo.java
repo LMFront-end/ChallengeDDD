@@ -1,5 +1,6 @@
 package co.com.sofka.challengeDDD.domain.show.commands;
 import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
+import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.generics.Email;
 import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
@@ -10,7 +11,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class CambiarModelo extends Command{
-    
+
+    private final ShowId showId;
     private final ModeloId modeloId;
     private final Nombre nombre;
     private final Identificacion identificacion;

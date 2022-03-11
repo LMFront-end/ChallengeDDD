@@ -1,5 +1,6 @@
 package co.com.sofka.challengeDDD.domain.show.commands;
 import co.com.sofka.challengeDDD.domain.show.ids.MonitorId;
+import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDeConfidencialidad;
 import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
@@ -11,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AsignarMonitor extends Command{
 
+    private final ShowId showId;
     private final MonitorId monitorId;
     private final Nombre nombre;
     private final Identificacion identificacion;
