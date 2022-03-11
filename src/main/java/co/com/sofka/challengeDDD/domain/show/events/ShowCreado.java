@@ -11,7 +11,7 @@ public class ShowCreado extends DomainEvent {
 
     // se implementa constructor
     public ShowCreado(ShowId showId) {
-        super("co.com.sofka.challengeDDD.showCreado");
+        super("co.com.sofka.challengeDDD.ShowCreado");
         this.showId = showId;
     }
 }

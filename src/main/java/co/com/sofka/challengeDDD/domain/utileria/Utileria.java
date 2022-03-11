@@ -4,11 +4,12 @@ import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.domain.utileria.entities.Espacio;
 import co.com.sofka.challengeDDD.domain.utileria.entities.InsumoElectronico;
 import co.com.sofka.challengeDDD.domain.utileria.entities.Producto;
+import co.com.sofka.challengeDDD.domain.utileria.events.*;
+import co.com.sofka.challengeDDD.domain.utileria.ids.EspacioID;
+import co.com.sofka.challengeDDD.domain.utileria.ids.InsumoID;
 import co.com.sofka.challengeDDD.domain.utileria.ids.ProductoID;
 import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
-import co.com.sofka.challengeDDD.domain.utileria.valueobjects.EstadoProducto;
-import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoDisfraz;
-import co.com.sofka.challengeDDD.domain.utileria.valueobjects.TipoProductoJuguete;
+import co.com.sofka.challengeDDD.domain.utileria.valueobjects.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -64,19 +65,43 @@ public class Utileria extends AggregateEvent<UtileriaID> {
         Objects.requireNonNull(tipoProductoJuguete);
         Objects.requireNonNull(tipoProductoDisfraz);
         Objects.requireNonNull(estadoProducto);
-        appendChange(new ProductoAniadido(productoId, tipoProductoDisfraz, tipoProductoJuguete, estadoProducto)).apply();
+        appendChange(new ProductoAniadido(productoId, tipoProductoJuguete, tipoProductoDisfraz, estadoProducto)).apply();
     }
 
     // eliminarProducto()
+    public void eliminarProducto(ProductoID productoId){
+        Objects.requireNonNull(productoId);
+        appendChange(new ProductoEliminado(productoId)).apply();
+    }
 
     // añadirInsumoElectronico()
+    public void aniadirInsumoElectronico(InsumoID entityId, TipoDeInsumo tipoDeInsumo, EstadoInsumo estadoInsumo){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(tipoDeInsumo);
+        Objects.requireNonNull(estadoInsumo);
+        appendChange(new InsumoElectronicoAniadido(entityId, tipoDeInsumo, estadoInsumo)).apply();
+    }
 
     // eliminarInsumoElectronico()
+    public void eliminarInsumoElectronico(InsumoID entityId){
+        Objects.requireNonNull(entityId);
+        appendChange(new InsumoElectronicoEliminado(entityId)).apply();
+    }
 
-    // utilizarEspacio()
+    // utilizarEspacio() --> introducir espacio que se va utilizar en el show dentro del modelo
+    public void utilizarEspacio(EspacioID entityId, TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(tipoHabitacion);
+        Objects.requireNonNull(estadoHabitacion);
+        appendChange(new EspacioUtilizado(entityId, tipoHabitacion, estadoHabitacion)).apply();
+    }
 
     // cambiarEspacio()
-
-
+    public void cambiarEspacio(EspacioID entityId, TipoHabitacion tipoHabitacion, EstadoHabitacion estadoHabitacion){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(tipoHabitacion);
+        Objects.requireNonNull(estadoHabitacion);
+        appendChange(new EspacioCambiado(entityId, tipoHabitacion, estadoHabitacion)).apply();
+    }
 
 }
