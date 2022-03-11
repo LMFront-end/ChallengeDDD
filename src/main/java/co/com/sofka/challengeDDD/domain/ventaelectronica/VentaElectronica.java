@@ -2,9 +2,6 @@ package co.com.sofka.challengeDDD.domain.ventaelectronica;
 
 
 import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
-import co.com.sofka.challengeDDD.domain.utileria.Utileria;
-import co.com.sofka.challengeDDD.domain.utileria.UtileriaChange;
-import co.com.sofka.challengeDDD.domain.utileria.ids.UtileriaID;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.CanalDePago;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Cliente;
 import co.com.sofka.challengeDDD.domain.ventaelectronica.entities.Transaccion;
@@ -99,7 +96,7 @@ public class VentaElectronica extends AggregateEvent<VentaElectronicaId> {
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(identificacion);
         Objects.requireNonNull(email);
-        appendChange(new ClienteModficado(entityId, nombre, identificacion, email)).apply();
+        appendChange(new ClienteModificado(entityId, nombre, identificacion, email)).apply();
 
     }
 
