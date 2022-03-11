@@ -13,7 +13,7 @@ public class ModeloId extends Identity {
     public ModeloId() {
     }
 
-    public static MonitorId of(String value){
-        return new MonitorId(value);
+    public static ModeloId of(String value){
+        return new ModeloId(value);
     }
 }
