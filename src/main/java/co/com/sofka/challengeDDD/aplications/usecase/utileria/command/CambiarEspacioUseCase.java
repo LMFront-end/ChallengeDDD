@@ -15,7 +15,7 @@ public class CambiarEspacioUseCase extends UseCase<RequestCommand<CambiarEspacio
         var command =  input.getCommand();
         // se recoge la instancia
         var utileria = Utileria.from(command.getUtileriaID(), command.getShowId(), retrieveEvents());
-        utileria.cambiarEspacio(command.getShowId(), command.getEspacioId(), command.getUtileriaID(), command.getTipoHabitacion(), command.getEstadoHabitacion());
+        utileria.cambiarEspacio(command.getEspacioId(), command.getUtileriaID(), command.getTipoHabitacion(), command.getEstadoHabitacion());
         emit().onResponse(new ResponseEvents(utileria.getUncommittedChanges()));
 
     }
