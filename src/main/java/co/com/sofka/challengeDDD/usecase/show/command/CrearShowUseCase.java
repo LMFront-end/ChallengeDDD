@@ -13,6 +13,7 @@ public class CrearShowUseCase extends UseCase<RequestCommand<CrearShow>, Respons
     public void executeUseCase(RequestCommand<CrearShow> input) {
 
         var command = input.getCommand();
+        // se crea una nueva instancia
         var show = new Show(command.getShowId());
         emit().onResponse(new ResponseEvents(show.getUncommittedChanges()));
     }

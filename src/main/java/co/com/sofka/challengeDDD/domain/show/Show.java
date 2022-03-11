@@ -96,7 +96,7 @@ public class Show extends AggregateEvent<ShowId> {
     }
 
     // asignarCanalDeTransmision()
-    public void cambiarMonitor(CanalDeTransmisionId canalDeTransmisionId, AcuerdoDePago acuerdoDePago, PaginasDeTransmision paginasDeTransmision){
+    public void asignarCanalDeTransmision(CanalDeTransmisionId canalDeTransmisionId, AcuerdoDePago acuerdoDePago, PaginasDeTransmision paginasDeTransmision){
         Objects.requireNonNull(canalDeTransmisionId);
         Objects.requireNonNull(acuerdoDePago);
         Objects.requireNonNull(paginasDeTransmision);

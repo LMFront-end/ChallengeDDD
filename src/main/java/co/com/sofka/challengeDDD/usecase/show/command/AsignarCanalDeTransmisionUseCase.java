@@ -1,4 +1,23 @@
 package co.com.sofka.challengeDDD.usecase.show.command;
 
-public class AsignarCanalDeTransmisionUseCase {
+import co.com.sofka.business.generic.UseCase;
+import co.com.sofka.business.support.RequestCommand;
+import co.com.sofka.business.support.ResponseEvents;
+import co.com.sofka.challengeDDD.domain.show.Show;
+import co.com.sofka.challengeDDD.domain.show.commands.AsignarCanalDeTransmision;
+import co.com.sofka.domain.generic.Command;
+
+public class AsignarCanalDeTransmisionUseCase extends UseCase<RequestCommand<AsignarCanalDeTransmision>, ResponseEvents> {
+
+    // se implementa el método
+    @Override
+    public void executeUseCase(RequestCommand<AsignarCanalDeTransmision> input) {
+
+        var command =  input.getCommand();
+        // se recoge la instancia
+        var show = Show.from(command.getShowId());
+
+    }
+
+
 }
