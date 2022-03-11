@@ -10,21 +10,17 @@ public class ShowChange extends EventChange {
 
     public ShowChange(Show show) {
 
-        apply((ShowCreado event) -> {
-            show.showId = event.getShowId();
-        });
+        apply((ShowCreado event) -> show.showId = event.getShowId());
 
         // Métodos
 
         // asignarModelo()
-        apply((ModeloAsignada event) -> {
-            show.modelo = new Modelo(
-                    event.getModeloId(),
-                    event.getNombre(),
-                    event.getIdentificacion(),
-                    event.getEmail()
-            );
-        });
+        apply((ModeloAsignada event) -> show.modelo = new Modelo(
+                event.getModeloId(),
+                event.getNombre(),
+                event.getIdentificacion(),
+                event.getEmail()
+        ));
 
         // cambiarModelo()
         apply((ModeloCambiada event) ->{
@@ -34,14 +30,12 @@ public class ShowChange extends EventChange {
         });
 
         // asignarMonitor()
-        apply((MonitorAsignado event) -> {
-            show.monitor = new Monitor(
-                    event.getMonitorId(),
-                    event.getNombre(),
-                    event.getIdentificacion(),
-                    event.getAcuerdoDeConfidencialidad()
-            );
-        });
+        apply((MonitorAsignado event) -> show.monitor = new Monitor(
+                event.getMonitorId(),
+                event.getNombre(),
+                event.getIdentificacion(),
+                event.getAcuerdoDeConfidencialidad()
+        ));
 
         // cambiarMonitor()
         apply((MonitorCambiado event) ->{
@@ -51,13 +45,11 @@ public class ShowChange extends EventChange {
         });
 
         // asignarCanalDeTransmision()
-        apply((CanalDeTransmisionAsignado event) -> {
-            show.canalDeTransmision = new CanalDeTransmision(
-                    event.getCanalDeTransmisionId(),
-                    event.getAcuerdoDePago(),
-                    event.getPaginasDeTransmision()
-            );
-        });
+        apply((CanalDeTransmisionAsignado event) -> show.canalDeTransmision = new CanalDeTransmision(
+                event.getCanalDeTransmisionId(),
+                event.getAcuerdoDePago(),
+                event.getPaginasDeTransmision()
+        ));
 
         // cambiarCanalDeTransmision()
         apply((CanalDeTransmisionCambiado event) ->{
