@@ -6,6 +6,8 @@ import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
+import java.util.Objects;
+
 public class Cliente extends Entity<ClienteId> {
 
     // se crean las variables para los objectValue
@@ -22,5 +24,22 @@ public class Cliente extends Entity<ClienteId> {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.email = email;
+    }
+
+    // métodos de la entidad Cliente
+
+    // cambiarNombre()
+    public void cambiarNombre(Nombre nombre){
+        this.nombre = Objects.requireNonNull(nombre);
+    }
+
+    // cambiarIdentificacion()
+    public void cambiarIdentificacion(Identificacion identificacion){
+        this.identificacion = Objects.requireNonNull(identificacion);
+    }
+
+    // cambiarEmail()
+    public void cambiarEmail(Email email){
+        this.email = Objects.requireNonNull(email);
     }
 }
