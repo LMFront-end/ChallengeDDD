@@ -19,5 +19,5 @@ public class AniadirProductoUseCase extends UseCase<RequestCommand<AniadirProduc
         utileria.aniadirProducto(command.getShowId(), command.getProductoID(), command.getUtileriaID(), command.getTipoProductoDisfraz(), command.getTipoProductoJuguete(), command.getEstadoProducto());
         emit().onResponse(new ResponseEvents(utileria.getUncommittedChanges()));
     }
-    
+
 }
