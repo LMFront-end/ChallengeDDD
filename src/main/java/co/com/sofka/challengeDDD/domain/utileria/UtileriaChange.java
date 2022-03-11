@@ -1,6 +1,6 @@
 package co.com.sofka.challengeDDD.domain.utileria;
 
-import co.com.sofka.challengeDDD.domain.show.events.ShowCreado;
+import co.com.sofka.challengeDDD.domain.utileria.entities.Espacio;
 import co.com.sofka.challengeDDD.domain.utileria.entities.InsumoElectronico;
 import co.com.sofka.challengeDDD.domain.utileria.entities.Producto;
 import co.com.sofka.challengeDDD.domain.utileria.events.*;
@@ -47,16 +47,26 @@ public class UtileriaChange extends EventChange {
 
         //  eliminarInsumoElectronico()
         apply((InsumoElectronicoEliminado event) -> {
-
+            utileria.insumosElectronicos.forEach(insumo -> {
+                if (insumo.identity().equals(event.getInsumoID())) {
+                    utileria.insumosElectronicos.remove(insumo);
+                }
+            });
         });
 
         // utilizarEspacio()
         apply((EspacioUtilizado event) ->{
+            utileria.espacio = new Espacio(
+                    event.getEntityId(),
+                    event.getTipoHabitacion(),
+                    event.getEstadoHabitacion()
+            );
         });
 
         // cambiarEspacio()
         apply((EspacioCambiado event) -> {
-
+            utileria.espacio.CambiarEstadoHabitacion(event.getEstadoHabitacion());
+            utileria.espacio.cambiarTipoHabitacion(event.getTipoHabitacion());
         });
     }
 }
