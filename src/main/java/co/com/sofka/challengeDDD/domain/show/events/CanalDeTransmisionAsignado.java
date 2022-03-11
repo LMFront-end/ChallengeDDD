@@ -5,7 +5,9 @@ import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDePago;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.PaginasDeTransmision;
 import co.com.sofka.domain.generic.DomainEvent;
 import lombok.Getter;
-@Getterpublic class CanalDeTransmisionAsignado extends DomainEvent {
+
+@Getter
+public class CanalDeTransmisionAsignado extends DomainEvent {
 
     private final CanalDeTransmisionId canalDeTransmisionId;
     private final AcuerdoDePago acuerdoDePago;

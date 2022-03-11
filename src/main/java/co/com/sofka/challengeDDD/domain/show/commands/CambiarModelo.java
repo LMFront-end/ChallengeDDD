@@ -5,21 +5,15 @@ import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
 import co.com.sofka.domain.generic.Command;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
+@RequiredArgsConstructor
 public class CambiarModelo extends Command{
     
     private final ModeloId modeloId;
     private final Nombre nombre;
     private final Identificacion identificacion;
     private final Email email;
-
-    public CambiarModelo(ModeloId modeloId, Nombre nombre, Identificacion identificacion, Email email) {
-        this.modeloId = modeloId;
-        this.nombre = nombre;
-        this.identificacion = identificacion;
-        this.email = email;
-        }
-    
 
 }
