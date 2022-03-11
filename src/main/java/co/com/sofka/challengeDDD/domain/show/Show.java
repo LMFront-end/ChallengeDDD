@@ -3,10 +3,13 @@ package co.com.sofka.challengeDDD.domain.show;
 import co.com.sofka.challengeDDD.domain.show.entities.CanalDeTransmision;
 import co.com.sofka.challengeDDD.domain.show.entities.Modelo;
 import co.com.sofka.challengeDDD.domain.show.entities.Monitor;
+import co.com.sofka.challengeDDD.domain.show.ids.CanalDeTransmisionId;
 import co.com.sofka.challengeDDD.domain.show.ids.ModeloId;
 import co.com.sofka.challengeDDD.domain.show.ids.MonitorId;
 import co.com.sofka.challengeDDD.domain.show.ids.ShowId;
 import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDeConfidencialidad;
+import co.com.sofka.challengeDDD.domain.show.valueobjects.AcuerdoDePago;
+import co.com.sofka.challengeDDD.domain.show.valueobjects.PaginasDeTransmision;
 import co.com.sofka.challengeDDD.generics.Email;
 import co.com.sofka.challengeDDD.generics.Identificacion;
 import co.com.sofka.challengeDDD.generics.Nombre;
@@ -82,8 +85,27 @@ public class Show extends AggregateEvent<ShowId> {
     }
 
     // cambiarMonitor()
+    public void cambiarMonitor(MonitorId monitorId, Nombre nombre, Identificacion identificacion, AcuerdoDeConfidencialidad acuerdoDeConfidencialidad){
+        Objects.requireNonNull(monitorId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(identificacion);
+        Objects.requireNonNull(acuerdoDeConfidencialidad);
+        appendChange(new MonitorCambiado(monitorId, nombre, identificacion, acuerdoDeConfidencialidad)).apply();
+    }
 
     // asignarCanalDeTransmision()
+    public void cambiarMonitor(CanalDeTransmisionId canalDeTransmisionId, AcuerdoDePago acuerdoDePago, PaginasDeTransmision paginasDeTransmision){
+        Objects.requireNonNull(canalDeTransmisionId);
+        Objects.requireNonNull(acuerdoDePago);
+        Objects.requireNonNull(paginasDeTransmision);
+        appendChange(new CanalDeTransmisionAsignado(canalDeTransmisionId, acuerdoDePago, paginasDeTransmision)).apply();
+    }
 
     // cambiarCanalDeTransmision()
+    public void cambiarCanalDeTransmision(CanalDeTransmisionId canalDeTransmisionId, AcuerdoDePago acuerdoDePago, PaginasDeTransmision paginasDeTransmision){
+        Objects.requireNonNull(canalDeTransmisionId);
+        Objects.requireNonNull(acuerdoDePago);
+        Objects.requireNonNull(paginasDeTransmision);
+        appendChange(new CanalDeTransmisionCambiado(canalDeTransmisionId, acuerdoDePago, paginasDeTransmision)).apply();
+    }
 }
