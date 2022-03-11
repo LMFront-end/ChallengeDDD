@@ -1,4 +1,4 @@
-package co.com.sofka.challengeDDD.usecase.show.command;
+package co.com.sofka.challengeDDD.aplications.usecase.show.command;
 
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;

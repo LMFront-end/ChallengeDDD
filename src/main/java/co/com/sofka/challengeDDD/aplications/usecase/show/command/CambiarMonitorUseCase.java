@@ -1,21 +1,21 @@
-package co.com.sofka.challengeDDD.usecase.show.command;
+package co.com.sofka.challengeDDD.aplications.usecase.show.command;
 
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.challengeDDD.domain.show.Show;
-import co.com.sofka.challengeDDD.domain.show.commands.CambiarCanalDeTransmision;
+import co.com.sofka.challengeDDD.domain.show.commands.CambiarMonitor;
 
-public class CambiarCanalDeTransmisionUseCase extends UseCase<RequestCommand<CambiarCanalDeTransmision>, ResponseEvents> {
+public class CambiarMonitorUseCase extends UseCase<RequestCommand<CambiarMonitor>, ResponseEvents> {
 
     // se implementa el método
     @Override
-    public void executeUseCase(RequestCommand<CambiarCanalDeTransmision> input) {
+    public void executeUseCase(RequestCommand<CambiarMonitor> input) {
 
         var command =  input.getCommand();
         // se recoge la instancia
         var show = Show.from(command.getShowId(), retrieveEvents());
-        show.cambiarCanalDeTransmision(command.getCanalDeTransmisionId(), command.getAcuerdoDePago(), command.getPaginasDeTransmision());
+        show.cambiarMonitor(command.getMonitorId(), command.getNombre(), command.getIdentificacion(), command.getAcuerdoDeConfidencialidad());
         emit().onResponse(new ResponseEvents(show.getUncommittedChanges()));
     }
 }
