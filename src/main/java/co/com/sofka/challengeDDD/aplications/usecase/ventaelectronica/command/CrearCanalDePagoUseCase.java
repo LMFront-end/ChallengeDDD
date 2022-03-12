@@ -14,10 +14,9 @@ public class CrearCanalDePagoUseCase extends UseCase<RequestCommand<CrearCanalDe
 
         var command = input.getCommand();
         // se crea una nueva instancia
-        var ventaElectronica = new VentaElectronica(command.getVentaElectronicaId(), command.getShowId());
+        var ventaElectronica = VentaElectronica.from(command.getVentaElectronicaId(), command.getShowId(), retrieveEvents());
+        ventaElectronica.crearCanalDePago(command.getCanalDePagoId(), command.getCanalPagoProveedor(), command.getPoliticaDeRetiro());
         emit().onResponse(new ResponseEvents(ventaElectronica.getUncommittedChanges()));
-
-
 
     }
 }
