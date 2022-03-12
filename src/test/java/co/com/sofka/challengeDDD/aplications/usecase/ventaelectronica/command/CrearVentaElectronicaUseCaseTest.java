@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CrearVentaElectronicaUseCaseTest {
 
     @Test
-    void CrearVentaElectronicaUseCase(){
+    void crearVentaElectronicaUseCaseTest(){
 
         // se llama al idShow
         ShowId showId = ShowId.of("1234");
