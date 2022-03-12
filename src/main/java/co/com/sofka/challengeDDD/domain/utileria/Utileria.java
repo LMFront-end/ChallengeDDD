@@ -13,6 +13,7 @@ import co.com.sofka.challengeDDD.domain.utileria.valueobjects.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -31,8 +32,8 @@ public class Utileria extends AggregateEvent<UtileriaID> {
 
     protected UtileriaID utileriaID;
     protected Espacio espacio;
-    protected Set<InsumoElectronico> insumosElectronicos;
-    protected Set<Producto> productos;
+    protected Set<InsumoElectronico> insumosElectronicos = new HashSet<>();
+    protected Set<Producto> productos = new HashSet<>();
 
 
     // se crea el constructor
