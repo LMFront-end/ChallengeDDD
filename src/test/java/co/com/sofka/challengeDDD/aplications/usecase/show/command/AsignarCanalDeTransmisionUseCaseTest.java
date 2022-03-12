@@ -39,6 +39,7 @@ class AsignarCanalDeTransmisionUseCaseTest {
         PaginasDeTransmision paginasDeTransmision = new PaginasDeTransmision(PaginaDeTransmisionValue.BONGOCAMS);
         AcuerdoDePago acuerdoDePago = new AcuerdoDePago(0.5);
 
+        // se crea una lista de dominio
         List<DomainEvent> mockEvents = List.of(new CanalDeTransmisionAsignado(canalDeTransmisionId, acuerdoDePago, paginasDeTransmision));
 
         // comando
@@ -57,10 +58,12 @@ class AsignarCanalDeTransmisionUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
+        // events.get(0) --> show creado
         var event = (CanalDeTransmisionAsignado) events.get(1);
 
         // aggregateRootId --> Devuelve un string
         Assertions.assertEquals(showId.toString(), event.aggregateRootId());
+
         // getShowId -> devuelve un elemento de tipo Identity
         Assertions.assertEquals(canalDeTransmisionId, event.getCanalDeTransmisionId());
         Assertions.assertEquals(paginasDeTransmision, event.getPaginasDeTransmision());
