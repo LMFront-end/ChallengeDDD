@@ -15,7 +15,8 @@ public class CrearClienteUseCase extends UseCase<RequestCommand<CrearCliente>, R
 
         var command = input.getCommand();
         // se crea una nueva instancia
-        var ventaElectronica = new VentaElectronica(command.getVentaElectronicaId(), command.getShowId());
+        var ventaElectronica = VentaElectronica.from (command.getVentaElectronicaId(), command.getShowId(), retrieveEvents());
+        ventaElectronica.crearCliente(command.getClienteId(), command.getNombre(), command.getIdentificacion(), command.getEmail());
         emit().onResponse(new ResponseEvents(ventaElectronica.getUncommittedChanges()));
     }
 }
