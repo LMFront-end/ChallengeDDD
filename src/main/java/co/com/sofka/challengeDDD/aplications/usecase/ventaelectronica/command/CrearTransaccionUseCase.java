@@ -15,7 +15,8 @@ public class CrearTransaccionUseCase extends UseCase<RequestCommand<CrearTransac
 
         var command = input.getCommand();
         // se crea una nueva instancia
-        var ventaElectronica = new VentaElectronica(command.getVentaElectronicaId(), command.getShowId());
+        var ventaElectronica = VentaElectronica.from (command.getVentaElectronicaId(), command.getShowId(), retrieveEvents());
+        ventaElectronica.crearTransaccion(command.getTransaccionId(), command.getValorMoneda(), command.getFecha());
         emit().onResponse(new ResponseEvents(ventaElectronica.getUncommittedChanges()));
     }
 }
