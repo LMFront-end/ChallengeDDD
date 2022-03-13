@@ -2,7 +2,7 @@
 
 <<<<<<< HEAD
 ![alt text](./ChallengeDDDLina.png)
-![alt text](./PortadaTest.png)
+![alt text](./portadaTest.png)
 ![alt text](./ResultadoTest.png)
 =======
 ![Proyecto DDD sofka]
