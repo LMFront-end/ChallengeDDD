@@ -6,3 +6,5 @@ public enum AcuerdoDeConfidencialidadValue {
     ACEPTADO,
     RECHAZADO
 }
+
+

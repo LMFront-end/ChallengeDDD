@@ -18,6 +18,4 @@ public class AsignarCanalDeTransmisionUseCase extends UseCase<RequestCommand<Asi
         show.asignarCanalDeTransmision(command.getCanalDeTransmisionId(), command.getAcuerdoDePago(), command.getPaginasDeTransmision());
         emit().onResponse(new ResponseEvents(show.getUncommittedChanges()));
     }
-
-
 }

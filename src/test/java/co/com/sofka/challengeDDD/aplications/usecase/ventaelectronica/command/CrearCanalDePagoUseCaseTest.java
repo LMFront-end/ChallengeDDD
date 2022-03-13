@@ -68,9 +68,6 @@ class CrearCanalDePagoUseCaseTest {
         Assertions.assertEquals(canalPagoProveedor, event.getCanalPagoProveedor());
         Assertions.assertEquals(politicaDeRetiro, event.getPoliticaDeRetiro());
 
-
-
-
     }
 
 
